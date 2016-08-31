@@ -17,7 +17,7 @@ library
   hs-source-dirs:      src
   exposed-modules:     Lib
   build-depends:       array >= 0.5.1.0
-                       base >= 4.7 && < 5
+                     , base >= 4.7 && < 5
   default-language:    Haskell2010
 
 executable euler-haskell-exe

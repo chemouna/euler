@@ -1,12 +1,31 @@
 module Euler75 where
 
-import Data.Array
+pytr :: Int -> [(Bool, Int, Int, Int)]
+pytr n = [(gcd a b == 1, a, b, c) |
+      a <- [1..n],
+      b <- [1..n],
+      c <- [1..n],
+      a < b && b < c, a^2 + b^2 == c^2, a+b+c <= n]
 
--- Singular integer right triangles
+nbTriples :: Int -> Int
+nbTriples limit = length $ pytr limit
 
--- euler75 :: Int -> Int
--- euler75 limit = length rightAngles
+nbPrimitives :: Int -> Int
+nbPrimitives limit = sum $ map (\(x, _, _,_) -> if x then 1 else 0) $ pytr limit
 
--- rightAngles :: Int -> [Int]
--- rightAngles limit = (a, b, c)
---   where a =
+-- this solution seems to take forever for only 1000
+
+-- a solution that could work for 15000000
+
+-- for (long m = 2; m < mlimit; m++) {
+--     for (long n = 1; n < m; n++) {
+--         if (((n + m) % 2) == 1 && gcd(n, m) == 1) {
+--             long a = m * m + n * n;
+--             long b = m * m - n * n;
+
+
+pyths :: Int -> [(Int, Int, Int)]
+pyths x = [(m*m - n*n, 2*m*n, m*m + n*n) | m <- [2 .. limit], n <- [1 .. m],
+                   (n + m) `mod` 2 == 1, gcd n m == 1]
+          where limit = floor $ sqrt ((fromIntegral x) / 2);
+
