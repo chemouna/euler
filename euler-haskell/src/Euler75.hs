@@ -16,16 +16,10 @@ nbPrimitives limit = sum $ map (\(x, _, _,_) -> if x then 1 else 0) $ pytr limit
 -- this solution seems to take forever for only 1000
 
 -- a solution that could work for 15000000
-
--- for (long m = 2; m < mlimit; m++) {
---     for (long n = 1; n < m; n++) {
---         if (((n + m) % 2) == 1 && gcd(n, m) == 1) {
---             long a = m * m + n * n;
---             long b = m * m - n * n;
-
-
 pyths :: Int -> [(Int, Int, Int)]
 pyths x = [(m*m - n*n, 2*m*n, m*m + n*n) | m <- [2 .. limit], n <- [1 .. m],
                    (n + m) `mod` 2 == 1, gcd n m == 1]
           where limit = floor $ sqrt ((fromIntegral x) / 2);
+
+
 
