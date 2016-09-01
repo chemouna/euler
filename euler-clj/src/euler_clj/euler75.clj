@@ -11,6 +11,27 @@
           :when (== (math/gcd u v) 1)]
           (+ a b c)))
 
-(defn perimeters
+(triples 100)
+
+(defn triples'
   [n]
-  )
+  (for [m (range 2 (math/round (math/sqrt (math/floor (/ n 2)))))
+        n (range 1 m)
+        :when (== (mod (+ m n) 2) 1)
+        :when (== (math/gcd n m) 1)]
+        [(- (* m n) (* n n)) (* 2 (* m n)) (+ (* m n)(* n n))]))
+
+(triples' 100)
+
+(defn nbtriples'
+  [n]
+  (count (triples' n)))
+
+(nbtriples' 1500000)
+
+(defn nbtriples''
+  [n]
+  (reduce + (map first (triples' n))))
+
+(nbtriples'' 1500000)
+
