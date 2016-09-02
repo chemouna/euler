@@ -35,3 +35,6 @@
 
 (nbtriples'' 1500000)
 
+;; it should return  161667 triangles which can be bent one way (and take an acceptable time around 45ms)
+
+
