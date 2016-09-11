@@ -18,6 +18,7 @@ library
   exposed-modules:     Lib
   build-depends:       array >= 0.5.1.0
                      , base >= 4.7 && < 5
+                     , arithmoi
   default-language:    Haskell2010
 
 executable euler-haskell-exe
