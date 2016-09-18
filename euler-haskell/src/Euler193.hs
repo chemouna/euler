@@ -32,8 +32,6 @@ main = do
   c <- getCPUTime
   putStrLn $ "Prime Calculation took " ++ show (a `div` 10^12) ++ " seconds"
   putStrLn $ "Moebius Calculation took " ++ show ((c-a) `div` 10^12)
-             ++ " seconds" 
+             ++ " seconds"
 
--- solution #2
-muTable :: Int -> UArray Int Int
-muTable 
+-- https://github.com/yasuabe/project-euler-haskell/blob/master/solutions/193.hs
