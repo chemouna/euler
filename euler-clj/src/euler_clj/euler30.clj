@@ -31,18 +31,6 @@
   (mapv #(mod % 10))
   rseq))
 
-;; (defn euler30
-;;   "Find the sum of all numbers that can be written the sum of theirs n'th powers of their digits."
-;;   [n]
-;;   (range 2..999999)
-;;   )
-
-;; (take 10 (reduce + (map #(math/exp % 5) (digits x))) == x)
-
-;; (take 20 (for [x (range 100000000) y (range 1000000) :while (< y x)] [x y]))
-
-;;  [x | x <- [2..999999], sum (map (^5) (digs x)) == x]
-
 (defn euler30
   []
   (reduce +
