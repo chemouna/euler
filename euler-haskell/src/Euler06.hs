@@ -11,3 +11,5 @@ diffSquares n = ((sum [1..n])^2) - (sum $ map (^2) [1..n])
 
 diffSquares2 :: Int -> Int
 diffSquares2 n = (foldl1 (+) [1..n])^2 - (foldl1 (+) . map (^2) $ [1..n])
+
+
