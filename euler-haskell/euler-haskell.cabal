@@ -19,6 +19,8 @@ library
   build-depends:       array >= 0.5.1.0
                      , base >= 4.7 && < 5
                      , arithmoi
+                     , QuickCheck
+                     , hspec
   default-language:    Haskell2010
 
 executable euler-haskell-exe
@@ -28,6 +30,8 @@ executable euler-haskell-exe
   build-depends:       array >= 0.5.1.0
                      , base
                      , euler-haskell
+                     , hspec
+                     , QuickCheck
   default-language:    Haskell2010
 
 test-suite euler-haskell-test
