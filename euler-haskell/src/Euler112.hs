@@ -36,4 +36,3 @@ getFirstPercentageBouncy percent bouncy nonBouncy
 euler112 = print $ getFirstPercentageBouncy 99 0 100
 
 -- result: 1587000
-ss
