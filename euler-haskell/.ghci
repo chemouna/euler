@@ -1,0 +1,2 @@
+:def doc \input -> return (":!haskell-docs " ++ input)
+

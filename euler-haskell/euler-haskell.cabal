@@ -16,22 +16,27 @@ cabal-version:       >=1.10
 library
   hs-source-dirs:      src
   exposed-modules:     Lib
-  build-depends:       array >= 0.5.1.0
-                     , base >= 4.7 && < 5
+  build-depends:       QuickCheck
                      , arithmoi
-                     , QuickCheck
+                     , array >= 0.5.1.0
+                     , base >= 4.7 && < 5
+                     , containers >= 0.5.6.2
+                     , haskell-docs
                      , hspec
+                     , mtl >= 2.2.1
   default-language:    Haskell2010
 
 executable euler-haskell-exe
   hs-source-dirs:      app
   main-is:             Main.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
-  build-depends:       array >= 0.5.1.0
+  build-depends:       QuickCheck
+                     , array >= 0.5.1.0
                      , base
+                     , containers >= 0.5.6.2
                      , euler-haskell
                      , hspec
-                     , QuickCheck
+                     , mtl >= 2.2.1
   default-language:    Haskell2010
 
 test-suite euler-haskell-test
@@ -40,7 +45,9 @@ test-suite euler-haskell-test
   main-is:             Spec.hs
   build-depends:       array >= 0.5.1.0
                      , base
+                     , containers >= 0.5.6.2
                      , euler-haskell
+                     , mtl >= 2.2.1
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   default-language:    Haskell2010
 
