@@ -12,9 +12,10 @@ primeFactors n = factor n primes
         | otherwise      =     factor n ps
 
 
+triangleNumbers = scanl1 (+) [1..]
+
 euler12 = head $ filter ((> 500) . nDivisors) triangleNumbers
             where nDivisors n = product $ map ((+1) . length) (group (primeFactors n))
-                  triangleNumbers = scanl1 (+) [1..]
 
 euler12_sol2 = head $ filter ((> 500) . nDivisors) triangleNumbers
             where nDivisors = product . map ((+1) . length) . group . primeFactors
