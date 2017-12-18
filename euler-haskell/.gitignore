@@ -48,3 +48,5 @@ tags
 /.git/
 /stack.cabal
 /etc/scripts/stack-scripts.cabal
+
+.stack-work/
