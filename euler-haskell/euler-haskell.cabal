@@ -24,6 +24,7 @@ library
                      , haskell-docs
                      , hspec
                      , mtl >= 2.2.1
+                     , csv
   default-language:    Haskell2010
 
 executable euler-haskell-exe
