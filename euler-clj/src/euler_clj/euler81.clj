@@ -24,11 +24,6 @@
     (to-array-2d
      (repeat s (repeat s 0)))))
 
-(defn make-weights
-  "creates a java array from a sequence vectors"
-  [vectors]
-  (to-array-2d vectors))
-
 (defn find-least-weight
   "Takes initial matrix w and results container lw and finds the least weight and updates lw[i][j]"
   [w lw]
@@ -51,17 +46,18 @@
       "630,803,746,422,111"
       "537,699,497,121,956"
       "805,732,524,37,331"]))
-  (def w-test (make-weights vs-test))
+  (def w-test (to-array-2d vs-test))
   (def lw-test (init-least-weights w-test))
   (find-least-weight w-test lw-test)
   lw-test)
 
 (defn euler81
   []
-  (def w (make-weights
+  (def w (to-array-2d
           (strings->vectors (file->strings "src/euler_clj/euler81_input.txt"))))
   (def lw (init-least-weights w))
   (find-least-weight w lw)
   (aget lw (dec (count lw)) (dec (count lw))))
 
-(euler81)
+
+;; (euler81)
